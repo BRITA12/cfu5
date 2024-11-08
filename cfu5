@@ -1,0 +1,35 @@
+#10/1/24
+#1-2period
+#Brithanysanchez
+#cfu#5
+import math
+num_pennies = int(input("Enter the number of Pennies: "))
+num_nickels = int(input("Enter the number of nickels: "))
+num_dimes = int(input("Enter the number of dimes: "))
+num_quarters = int(input("Enter the number of quarters: "))
+num_loonies = int(input("Enter the number of loonies: "))
+num_toonies = int(input("Enter the number of toonies: "))
+
+total_value = (num_pennies + 5*num_nickels + 10*num_dimes + 25*num_quarters + 100*num_loonies + 200*num_toonies)/100
+
+print()
+print("The total amount is: ", total_value)
+print("Pennies: " + str(num_pennies) )
+print("Nickels: " + str(num_nickels))
+print("Dimes: " + str(num_dimes))
+print("Quarters: " + str(num_quarters))
+print("Loonies: " + str(num_loonies))
+print("Toonies: " + str(num_toonies))
+
+
+print("Total vlaue of coins: $" + "{:.2f}" .format(total_value))
+total_dollars = int(total_value // 1)
+print(total_dollars)
+change = total_value - total_dollars
+change_quater = (change) % 4
+
+num_quarters = int(change * 4)
+num_dimes = int(change * 10)-num_quarters
+num_nickels = int(change * 20)-(num_dimes*2)
+num_pennies = int(change * 100)-(num_nickels*5) - (num_dimes*10)
+print(f"you have a total of {int(total_value - change)} dollars, {num_quarters} quarter, {num_dimes} Dimes, {num_nickels} Nickels, {num_pennies} pennies")
